@@ -7,8 +7,7 @@ export default function Home() {
       <div className="text-side">
         <p className="hello">&lt;¡Hola!&gt;</p>
         <h1>
-          Soy <span>Sol Merani</span>
-        </h1>
+          Soy <span>Sol Merani</span></h1>
         <h2>Back-end & Front-end</h2>
         <p className="description">
           Desarrolladora con pasión por el código limpio, la arquitectura eficiente y el diseño funcional.
