@@ -22,6 +22,9 @@ export default function Menu() {
         <div className="menu-dropdown">
           <ul>
             <li onClick={() => handleScroll("home")}>Inicio</li>
+            <li onClick={() => handleScroll("projects")}>Mis proyectos</li>
+            <li onClick={() => handleScroll("featured")}>Mi proyecto destacado</li>
+            <li onClick={() => handleScroll("about")}>Sobre mí</li>
             
           </ul>
         </div>
