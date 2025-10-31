@@ -13,7 +13,18 @@ export default function Home() {
           Desarrolladora con pasión por el código limpio, la arquitectura eficiente y el diseño funcional.
           Me encanta crear soluciones digitales que combinan la lógica del back-end con la estética del front.
         </p>
-        <button className="contact-btn">Contáctame →</button>
+       <button
+  className="contact-btn"
+  onClick={() => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+>
+  Contáctame →
+</button>
+
       </div>
 
      <div className="shape-side">

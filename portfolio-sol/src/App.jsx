@@ -3,6 +3,8 @@ import Menu from "./components/Menu";
 import Projects from "./pages/Projects";
 import FeaturedProject from "./pages/FeaturedProject";
 import About from "./pages/About";
+import TechnicalSkills from "./pages/TechnicalSkills";
+import Contact from "./pages/Contact";
 function App() {
   return (
     <>
@@ -11,6 +13,9 @@ function App() {
       <Projects />
       <FeaturedProject />
       <About />
+      <TechnicalSkills />
+      <Contact />
+
     </>
   );
 }
