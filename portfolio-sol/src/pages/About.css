@@ -1,82 +1,104 @@
 .about {
-  background-color: #fafafa;
+  background-color: none;
   min-height: 100vh;
   padding: 80px 8%;
   font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
 }
 
-/* 🔹 Título principal */
+/* TÍTULO */
 .section-title {
   text-align: center;
-  font-size: 2.3rem;
-  font-style: italic;
+  font-size: 2.6rem;
   font-weight: 600;
+  font-style: italic;
   margin-bottom: 60px;
 }
 
-/* 🔹 Contenedor principal */
+/* LAYOUT GENERAL */
 .about-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  gap: 80px;
 }
 
-/* 🔹 Figura izquierda */
+/* FIGURA IZQUIERDA */
 .about-shape {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 1.2;
 }
 
 .about-shape img {
-  width: 90%;
-  max-width: 500px;
-  object-fit: contain;
+  width: 100%;
+  max-width: 650px;
   opacity: 0.9;
 }
 
-/* 🔹 Texto derecha */
-.about-text {
+/* COLUMNA DERECHA */
+.about-right {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  color: #1b1b1b;
+  gap: 20px;        /* menos espacio entre cuadros */
 }
 
-.about-text h3 {
-  font-size: 1.6rem;
-  font-style: italic;
-  margin-bottom: 20px;
+
+/* CUADROS */
+.about-box {
+  background-color: #D5C4BA;
+  padding: 18px 20px;
+  border-radius: 18px;
+  font-size: 0.85rem;
+  max-width: 520px;
+
+  color: #929292;         /* 🔥 TEXTO DEL CUADRO EN GRIS */
 }
 
-.about-text h3 span {
+/* TÍTULO DE CADA BOX */
+.about-box h4 {
+  margin-bottom: 4px;
+  font-size: 0.95rem;
   font-weight: 600;
+  color: #000;         /* 🔥 TÍTULO EN NEGRO */
 }
 
-.about-text p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #333;
-  max-width: 550px;
+
+/* Título general */
+.about-title {
+  font-size: 1.25rem;  /* antes 1.4rem */
+  font-style: italic;
+  margin-bottom: 8px;
 }
 
-/* 🔹 Responsive */
+/* BOX CON LOGOS */
+.logos-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🔥 LOGOS MÁS GRANDES */
+.logos-box .logos img {
+  height: 42px;       /* antes 32px */
+  object-fit: contain;
+}
+
+/* RESPONSIVE */
 @media (max-width: 1100px) {
   .about-container {
     flex-direction: column;
     text-align: center;
   }
 
-  .about-shape img {
-    width: 70%;
-    margin-bottom: 40px;
+  .logos-box {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  .about-text p {
+  .logos img {
+    height: 36px;   /* un poco más chico para mobile */
+  }
+
+  .about-box {
     max-width: 100%;
   }
 }

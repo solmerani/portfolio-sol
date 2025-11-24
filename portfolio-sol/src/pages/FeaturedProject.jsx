@@ -49,12 +49,6 @@ export default function FeaturedProject() {
           <p className="collab">
             <strong>Colaborador(es):</strong> {project.collaborators}
           </p>
-
-          <div className="tags">
-            {project.tags.map((tag, i) => (
-              <span className="tag" key={i}>{tag}</span>
-            ))}
-          </div>
         </div>
       </div>
     </section>
