@@ -3,19 +3,19 @@
   min-height: 100vh;
   padding: 80px 8%;
   font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
 }
 
-/* 🔹 Título principal */
+/* TITULO */
 .section-title {
   text-align: center;
-  font-size: 2.3rem;
-  font-style: italic;
+  font-size: 2.6rem;
   font-weight: 600;
   margin-bottom: 60px;
+  font-style: italic;
+  color: #112233;
 }
 
-/* 🔹 Layout general */
+/* LAYOUT */
 .projects-layout {
   display: flex;
   justify-content: space-between;
@@ -23,73 +23,62 @@
   gap: 70px;
 }
 
-/* 🔹 Panel izquierdo */
+/* PANEL IZQUIERDO */
 .project-info {
   flex: 0.9;
   background-color: #f1f1f1;
-  border-radius: 25px;
   padding: 45px 55px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  height: 470px;
+  border-radius: 25px;
+  min-height: 460px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .project-info h3 {
-  font-size: 1.7rem;
-  font-weight: 700;
+  font-size: 1.8rem;
   margin-bottom: 15px;
-  color: #1b1b1b;
 }
 
 .project-info .description {
   font-size: 1rem;
-  color: #333;
   line-height: 1.7;
+  color: #333;
   margin-bottom: 20px;
 }
 
 .project-info .collab {
-  font-size: 0.95rem;
   color: #666;
+  font-size: 0.95rem;
 }
 
-/* 🔹 El “Apretá un proyecto…” ahora es un botón */
-.project-info .hint {
-  display: inline-block;
+.hint {
   background-color: #b58763;
-  color: #fff;
-  font-weight: 500;
-  font-size: 0.9rem;
-  border-radius: 25px;
   padding: 10px 18px;
-  text-align: center;
+  color: white;
+  border-radius: 25px;
   width: fit-content;
-  margin-top: 25px;
-  cursor: default;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  font-size: 0.9rem;
 }
 
-/* 🔹 Grid de tarjetas */
+/* GRID */
 .projects-grid {
   flex: 1.6;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 35px;
-  align-items: start;
 }
 
+/* TARJETA */
 .project-card {
   background-color: #efefef;
+  padding: 18px;
   border-radius: 20px;
-  padding: 22px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  height: 230px;
+  transition: 0.25s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 10px;
 }
 
 .project-card:hover {
@@ -102,33 +91,65 @@
   background-color: #e8e2dc;
 }
 
-.thumbnail {
-  background-color: #d8d8d8;
-  height: 150px;
+/* CARRUSEL */
+.thumbnail-carousel {
+  position: relative;
+  width: 100%;
+  height: 160px;              /* ⚠️ altura controlada */
   border-radius: 15px;
-  margin-bottom: 12px;
+  overflow: hidden;
+  background-color: #d8d8d8;
 }
 
+.thumbnail-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botones */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-btn.prev { left: 6px; }
+.carousel-btn.next { right: 6px; }
+
+/* TITULO + SHORT DESCRIPTION */
 .project-card h4 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-top: 5px;
-  color: #1b1b1b;
 }
 
-/* 🔹 Responsive */
+.short {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* RESPONSIVE */
 @media (max-width: 1100px) {
   .projects-layout {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .project-info {
-    max-width: 100%;
-    height: auto;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-info {
+    min-height: auto;
   }
 }

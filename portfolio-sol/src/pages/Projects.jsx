@@ -1,29 +1,68 @@
 import { useState } from "react";
 import "./Projects.css";
 
+import etiketa1 from "../assets/etiketa1.svg";
+import etiketa2 from "../assets/etiketa2.png";
+import etiketa3 from "../assets/etiketa3.png";
+import etiketa4 from "../assets/etiketa4.png";
+
+import scanma1 from "../assets/scanma1.png";
+import scanma2 from "../assets/scanma2.png";
+import scanma3 from "../assets/scanma3.png";
+
+import easy2 from "../assets/easy2.png";
+
+function ProjectCarousel({ images }) {
+  const [index, setIndex] = useState(0);
+
+  return (
+    <div className="thumbnail-carousel">
+      <img src={images[index]} alt="" />
+
+      {images.length > 1 && (
+        <>
+          <button className="carousel-btn prev" onClick={(e) => { e.stopPropagation(); setIndex((index === 0 ? images.length - 1 : index - 1)); }}>
+            ‹
+          </button>
+
+          <button className="carousel-btn next" onClick={(e) => { e.stopPropagation(); setIndex((index === images.length - 1 ? 0 : index + 1)); }}>
+            ›
+          </button>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Zwap",
+      title: "Etiketa",
+      short: "Detector de disruptores endocrinos en productos cosméticos.",
       description:
-        "Zwap es una plataforma de intercambio de hogares que permite a los usuarios viajar y hospedarse en casas de otras personas. Fui parte del equipo de desarrollo front-end, trabajando en la estructura de la web y la integración visual del diseño.",
-      collaborators: "Maia Michanie, Sol Merani, Tomás Díaz, Benjamín Castro",
+        "Etiketa es una aplicación móvil que permite escanear productos cosméticos y de higiene para identificar la presencia de disruptores endocrinos. Ofrece una calificación de salud, análisis de ingredientes, y recomendaciones de alternativas más seguras según los intereses del usuario. El objetivo del proyecto es promover un consumo consciente y ayudar a las personas a tomar decisiones informadas sobre los productos que utilizan.",
+      collaborators: "Sol Merani,Sebastian Huberman, Lucila Dayan, Sophie Sued.",
+      images: [etiketa1, etiketa2, etiketa3,etiketa4],
     },
     {
       id: 2,
-      title: "Maaian Dice Todo",
+      title: "Scanma",
+      short: "Analizador de mamografías con inteligencia artificial.",
       description:
-        "Proyecto audiovisual inspirado en el formato de streaming, donde me encargué de la programación de la web y la gestión del contenido multimedia.",
-      collaborators: "Sol Merani, Julián T., Maia Michanie",
+        "Scanma es un sistema de análisis automático de mamografías diseñado para asistir a profesionales de la salud en la detección temprana de cáncer de mama. Utiliza modelos de inteligencia artificial para identificar patrones y posibles anomalías en las imágenes, ofreciendo una segunda opinión rápida y confiable. El proyecto busca mejorar el soporte diagnóstico y contribuir a una detección más precisa y eficiente.",
+      collaborators: "Sol Merani,Sebastian Huberman, Maia Michanie, Lola Gouget.",
+       images: [scanma1, scanma2, scanma3],
     },
     {
       id: 3,
-      title: "Analizador de Mamografías",
+      title: "Easy Tech",
+      short: "App de escritorio para enseñar tecnología a adultos mayores.",
       description:
-        "Aplicación que utiliza inteligencia artificial para el análisis y detección temprana de anomalías en mamografías. Participé en el desarrollo de la interfaz y la conexión con el modelo de IA.",
-      collaborators: "Equipo TIC D 2024",
-    },
+        "Easy Tech es una aplicación de escritorio diseñada para ayudar a las personas mayores a familiarizarse con el uso del celular y las redes sociales. Incluye tests de opción múltiple, juegos interactivos y simuladores que enseñan de forma simple y práctica cómo utilizar aplicaciones como WhatsApp e Instagram, así como funciones básicas del dispositivo. El objetivo es reducir la brecha digital y brindar autonomía tecnológica a los adultos mayores.",
+      collaborators: "Sol Merani,Laila Dejtiar, Lucila Dayan,Jamin Niewadonsky.",
+      images: [easy2],
+    }
   ];
 
   const [selectedProject, setSelectedProject] = useState(null);
@@ -33,7 +72,8 @@ export default function Projects() {
       <h2 className="section-title">Mis proyectos</h2>
 
       <div className="projects-layout">
-        {/* Panel de información */}
+
+        {/* PANEL IZQUIERDO */}
         <div className="project-info">
           {selectedProject ? (
             <>
@@ -47,18 +87,14 @@ export default function Projects() {
             <>
               <h3>Mis proyectos</h3>
               <p className="description">
-                Estos son los proyectos en los que formé parte a lo largo de mi vida — en su mayoría
-                grupales — en todos me encargué de participar en el equipo de
-                programación y en la integración de los diseños.
+                Estos son los proyectos en los que trabajé a lo largo de mi vida — en su mayoría grupales — donde participé en desarrollo, lógica, estructura y la integración de los diseños.
               </p>
-              <p className="hint">
-                Apretá un proyecto para saber más información.
-              </p>
+              <p className="hint">Apretá un proyecto para saber más información.</p>
             </>
           )}
         </div>
 
-        {/* Grid de tarjetas */}
+         {/* Grid de tarjetas */}
         <div className="projects-grid">
           {projects.map((project) => (
             <div
@@ -68,8 +104,10 @@ export default function Projects() {
               }`}
               onClick={() => setSelectedProject(project)}
             >
-              <div className="thumbnail"></div>
+              <ProjectCarousel images={project.images} />
+
               <h4>{project.title}</h4>
+              <p className="short">{project.short}</p>
             </div>
           ))}
         </div>

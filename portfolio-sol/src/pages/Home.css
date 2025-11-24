@@ -1,114 +1,97 @@
+/* CONTENEDOR GENERAL */
 .home {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;         /* ✔️ CENTRA TODO */
+  text-align: left;            /* ✔️ PERO TEXTO ALINEADO A LA IZQUIERDA */
+  padding: 0 14%;
   height: 100vh;
   width: 100vw;
   background-color: #fafafa;
-  padding: 0 6%;
-  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* 📍Texto */
-.text-side {
-  flex: 1.2;
-  max-width: 700px;
+/* CONTENEDOR INTERNO (para que todo quede más ANCHO) */
+.text-wrapper {
+  width: 100%;
+  max-width: 1100px;          /* ✔️ OCUPA MÁS ANCHO COMO LA REFERENCIA */
+  display: flex;
+  flex-direction: column;
 }
 
+/* ¡HOLA! */
 .hello {
   color: #b58763;
-  font-weight: 700;
+  font-weight: 600;     /* un poquito más grueso */
   font-size: 1.4rem;
-  margin-top: 35px; /* un poco más abajo */
-  margin-bottom: 15px;
+  margin-top: 20px;     /* 🔥 ANTES: 20px — ahora más abajo */
+  margin-bottom: 20px;
 }
 
-/* Título principal */
-.text-side h1 {
-  font-size: 5.5rem;
-  font-weight: 700;
-  color: #111;
+
+/* TITULO PRINCIPAL */
+.text-wrapper h1 {
+  font-size: 5.8rem;
+  font-weight: 600;
   line-height: 1;
-  margin-bottom: 0.1rem !important; /* 🔥 ajusta separación */
+  margin-bottom: 10px;
 }
 
-.text-side h1 span {
+.text-wrapper h1 span {
   color: #b58763;
 }
 
-/* Subtítulo */
-.text-side h2 {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #111;
-  margin-top: 0.1rem !important; /* 🔥 lo acerca al h1 */
-  margin-bottom: 0.3rem;
+/* SUBTÍTULO */
+.text-wrapper h2 {
+  font-size: 4.8rem;
+  font-weight: 600;
+  margin: 0 0 30px;
+  color: #0f1d2e;
 }
 
-/* Descripción */
+/* DESCRIPCIÓN */
 .description {
-  font-size: 1.25rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.55;
   color: #444;
-  margin-bottom: 2.8rem;
-  max-width: 620px;
+  max-width: 750px;           /* ✔️ MÁS ANCHO COMO LA REFERENCIA */
+  margin-bottom: 2.2rem;
 }
 
-/* Botón */
 .contact-btn {
-  background-color: #b58763;
+  background-color: #B58763;
   color: white;
   font-weight: 600;
-  border: none;
-  border-radius: 25px;
-  padding: 15px 36px;
-  font-size: 1.1rem;
+  border-radius: 20px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
+  width: auto !important;      /* ✨ clave */
+  align-self: flex-start;      /* ✨ clave */
 }
 
-.contact-btn:hover {
-  background-color: #b58763;
-}
-
-/* Figura */
-.shape-side {
-  flex: 1;
+.contact-btn::after {
+  content: "➜";
+  background: white;
+  color: #b58763;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
-.shape-img {
-  width: 450px;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  opacity: 1;
-  margin-right: 40px; /* 👉 un poquito más a la izquierda */
-}
 
-/* 🔹 Responsive */
-@media (max-width: 1150px) {
-  .home {
-    flex-direction: column;
-    justify-content: center;
-    gap: 60px;
-    padding: 60px 8%;
-  }
-
-  .shape-img {
-    width: 320px;
-    margin-right: 0;
-  }
-
-  .text-side h1 {
-    font-size: 3.5rem;
-  }
-
-  .text-side h2 {
-    font-size: 2.3rem;
-  }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .text-wrapper h1 { font-size: 3.8rem; }
+  .text-wrapper h2 { font-size: 2.6rem; }
+  .description { font-size: 0.9rem; max-width: 100%; }
 }
