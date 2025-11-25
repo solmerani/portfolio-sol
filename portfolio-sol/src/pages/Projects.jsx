@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./Projects.css";
 
-import etiketa1 from "../assets/etiketa1.svg";
-import etiketa2 from "../assets/etiketa2.png";
-import etiketa3 from "../assets/etiketa3.png";
-import etiketa4 from "../assets/etiketa4.png";
+import etiketa1 from "../assets/logo2.png";
+import etiketa2 from "../assets/etiketa4.png";
+import etiketa3 from "../assets/pantalla1.png";
+import etiketa4 from "../assets/pantalla2.png";
 
 import scanma1 from "../assets/scanma1.png";
 import scanma2 from "../assets/scanma2.png";

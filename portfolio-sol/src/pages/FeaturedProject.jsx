@@ -4,10 +4,12 @@ import "./FeaturedProject.css";
 // 👉 Importá acá todas las imágenes del carrusel
 import img1 from "../assets/fig1.jpg";
 import img2 from "../assets/fig2.jpg";
+import img3 from "../assets/etiketat.jpg";
+import img4 from "../assets/img3.jpg";
 
 
 export default function FeaturedProject() {
-  const images = [img1, img2];
+  const images = [img1, img2,img3,img4];
   const [index, setIndex] = useState(0);
 
   const project = {

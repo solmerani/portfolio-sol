@@ -2,7 +2,7 @@ import "./Contact.css";
 import linkedin from "../assets/linkedin.png";
 import instagram from "../assets/instagram.png";
 import gmail from "../assets/gmail.png";
-import whatsapp from "../assets/whatsapp.png";
+import github from "../assets/github.png";
 
 export default function Contact() {
   return (
@@ -38,22 +38,31 @@ export default function Contact() {
           <h3>Seguime</h3>
 
           <div className="social-icons">
-            <a href="https://www.linkedin.com/in/solmerani" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/sol-merani-19b834357?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              target="_blank"
+            >
               <img src={linkedin} alt="LinkedIn" />
             </a>
 
-            <a href="https://www.instagram.com/sol.merani" target="_blank">
+            <a
+              href="https://www.instagram.com/solmeranii?igsh=MWg0dnNoeHczYXZheg%3D%3D&utm_source=qr"
+              target="_blank"
+            >
               <img src={instagram} alt="Instagram" />
             </a>
 
-            <a href="https://github.com/solmerani" target="_blank">
+            <a href="mailto:solmerani@gmail.com" target="_blank">
               <img src={gmail} alt="Gmail" />
             </a>
 
-            <a href="https://wa.me/5491131049062" target="_blank">
-              <img src={whatsapp} alt="WhatsApp" />
+            <a href="https://github.com/solmerani" target="_blank">
+              <img src={github} alt="Github" />
             </a>
           </div>
+
+          <p>+54 9 11 3104 9072</p>
+          <p>solmerani@gmail.com</p>
         </div>
 
       </div>

@@ -12,9 +12,7 @@ export default function Home() {
     <h2>Back-end & Front-end</h2>
 
     <p className="description">
-      Desarrolladora con pasión por el código limpio, la arquitectura eficiente y 
-      el diseño funcional. Me encanta crear soluciones digitales que combinan 
-      la lógica del back-end con la estética del front.
+      Me interesa todo lo que sea crear, mejorar y aprender. Trabajo con back-end y front-end, y me gusta encontrar soluciones simples a problemas reales. Soy independiente, práctica y me gusta trabajar en equipo.
     </p>
 
     <button

@@ -1,9 +1,10 @@
 .contact-footer {
-  background-color: none;
+  background-color: transparent;
   font-family: "Poppins", sans-serif;
   padding: 100px 8% 80px;
   display: flex;
   justify-content: center;
+  align-items: center;   /* 🔥 ALINEA LAS 3 COLUMNAS */
   box-sizing: border-box;
   min-height: 55vh;
 }
@@ -11,8 +12,8 @@
 .footer-content {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: space-between; /* 🔥 MUEVE SEGUIME BIEN A LA DERECHA */
+  align-items: flex-start;        /* 🔥 TODAS A LA MISMA ALTURA */
   gap: 40px;
 }
 

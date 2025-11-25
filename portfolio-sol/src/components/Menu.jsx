@@ -25,6 +25,7 @@ export default function Menu() {
             <li onClick={() => handleScroll("projects")}>Mis proyectos</li>
             <li onClick={() => handleScroll("featured")}>Mi proyecto destacado</li>
             <li onClick={() => handleScroll("about")}>Sobre mí</li>
+            <li onClick={() => handleScroll("skills")}>Habilidades técnicas</li>
             
           </ul>
         </div>

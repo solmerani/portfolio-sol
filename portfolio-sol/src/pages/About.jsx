@@ -44,10 +44,9 @@ export default function About() {
 
           {/* CUADRO 3 */}
           <div className="about-box">
-            <h4>Trabajo en equipo</h4>
+            <h4>Fecha de nacimiento y país de recidencia</h4>
             <p>
-              Tengo experiencia trabajando en equipo y contribuyendo a proyectos
-              grupales de forma efectiva.
+             Argentina, Capital Federal - 19/09/2007.
             </p>
           </div>
 
@@ -55,8 +54,7 @@ export default function About() {
           <div className="about-box">
             <h4>Características personales</h4>
             <p>
-              Me adapto con facilidad, soy práctica para resolver situaciones y me desempeño
-              bien en distintos entornos.
+              Me adapto con facilidad, soy práctica para resolver situaciones y me desenvuelvo bien en distintos entornos y tengo experiencia trabajando en equipo.
             </p>
           </div>
 

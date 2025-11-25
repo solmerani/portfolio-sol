@@ -1,45 +1,88 @@
 .featured {
-  background-color: none;
   min-height: 100vh;
-  padding: 60px 8%;        /* 🔥 BAJÉ LA SEPARACIÓN SUPERIOR */
+  padding: 60px 8%;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-/* Título */
+/* Fade-in general */
+.featured * {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TÍTULO */
 .section-title {
   text-align: center;
   font-size: 2.6rem;
   font-style: italic;
   font-weight: 600;
-  margin-bottom: 50px;     /* 🔥 UN POCO MENOS PARA SUBIR TODO */
+  margin-bottom: 50px;
+  position: relative;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 
-/* Layout general */
+/* subrayado animado */
+.section-title::after {
+  content: "";
+  width: 0%;
+  height: 4px;
+  background: #b58763;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  transition: 0.4s ease;
+}
+
+.section-title:hover::after {
+  width: 55%;
+}
+
+/* LAYOUT */
 .featured-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 75px;               /* un poquito menos para juntar todo */
-  margin-top: -20px;       /* 🔥🔥 SUBE TODA LA SECCIÓN */
+  gap: 75px;
+  margin-top: -20px;
 }
 
-/* --- CARRUSEL --- */
+/* -------------------------- */
+/* CARRUSEL */
+/* -------------------------- */
 .carousel {
   position: relative;
   width: 50%;
-  height: 470px;           /* más alto */
+  height: 470px;
   border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(10px);
+  animation-delay: 0.4s;
+}
+
+/* Zoom sutil on hover */
+.carousel:hover .carousel-img {
+  transform: scale(1.04);
 }
 
 .carousel-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease, opacity 0.35s ease;
 }
 
+/* flechas */
 .arrow {
   position: absolute;
   top: 50%;
@@ -50,24 +93,31 @@
   border-radius: 50%;
   cursor: pointer;
   font-size: 1.5rem;
-  transition: 0.2s ease;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* glow al pasar */
 .arrow:hover {
   background: white;
   transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 14px rgba(181,135,99,0.5);
 }
 
 .left { left: 12px; }
 .right { right: 12px; }
 
-/* --- INFO DERECHA --- */
+/* -------------------------- */
+/* INFO DERECHA */
+/* -------------------------- */
 .featured-info {
   width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: -25px;        /* 🔥🔥 ESTA ES LA CLAVE: sube el bloque entero */
+  margin-top: -25px;
+  opacity: 0;
+  animation-delay: 0.55s;
 }
 
 .featured-info h3 {
@@ -75,8 +125,28 @@
   font-weight: 700;
   font-style: italic;
   margin-bottom: 18px;
+  color: #0f1c24;
+  position: relative;
 }
 
+/* subrayado animado */
+.featured-info h3::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #b58763;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  border-radius: 3px;
+  transition: 0.35s;
+}
+
+.featured-info h3:hover::after {
+  width: 45%;
+}
+
+/* texto */
 .description {
   font-size: 1rem;
   color: #333;
@@ -84,15 +154,26 @@
   margin-bottom: 25px;
 }
 
+/* colab */
 .collab {
   font-size: 0.95rem;
   color: #666;
   margin-bottom: 30px;
+  opacity: 0.85;
+}
+
+/* floating highlight box */
+.featured-info:hover {
+  transform: translateY(-4px);
+  transition: 0.35s ease;
 }
 
 
 
-/* Responsive */
+
+/* -------------------------- */
+/* RESPONSIVE */
+/* -------------------------- */
 @media (max-width: 1100px) {
   .featured-container {
     flex-direction: column;
@@ -111,7 +192,7 @@
     margin-top: 10px; 
   }
 
-  .tags {
-    justify-content: center;
+  .section-title::after {
+    width: 40%;
   }
 }
