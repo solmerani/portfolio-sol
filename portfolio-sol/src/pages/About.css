@@ -17,10 +17,21 @@
 /* LAYOUT GENERAL */
 .about-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   gap: 80px;
 }
+
+/* FOTO IZQUIERDA */
+.about-photo img {
+  width: 360px;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-height: 100px;
+}
+
 
 /* FIGURA IZQUIERDA */
 .about-shape {
@@ -28,9 +39,11 @@
 }
 
 .about-shape img {
-  width: 100%;
-  max-width: 650px;
   opacity: 0.9;
+  max-height: 40rem;
+  margin-top:40px;
+  margin-left: 30px;
+  border-radius: 20px;
 }
 
 /* COLUMNA DERECHA */

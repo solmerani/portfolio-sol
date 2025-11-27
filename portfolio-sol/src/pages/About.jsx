@@ -1,5 +1,5 @@
 import "./About.css";
-import figura from "../assets/figura1.png";
+import sol from "../assets/sol.jpg";
 
 import ort from "../assets/ort.png";
 import itba from "../assets/itba.png";
@@ -13,7 +13,7 @@ export default function About() {
         
         {/* FIGURA DECORATIVA */}
         <div className="about-shape">
-          <img src={figura} alt="decoración" />
+          <img src={sol} alt="decoración" />
         </div>
 
         {/* TEXTOS A LA DERECHA */}
